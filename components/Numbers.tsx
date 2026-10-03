@@ -9,7 +9,7 @@ export default function Numbers() {
   return (
     <section className="relative overflow-hidden py-24 md:py-36">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img data-parallax src="/photos/city.jpg" alt="" className="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover opacity-20 grayscale" />
+      <img data-parallax src="/photos/city.jpg" alt="" className="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/60 to-ink" />
       <div className="relative mx-auto max-w-[1600px] px-6 md:px-10">
         <p data-reveal className="t-eyebrow mb-10 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />CodingHub in numbers</p>

@@ -29,7 +29,7 @@ export default function Page() {
                 <span className="font-display text-base text-lime md:col-span-1">0{i + 1}</span>
                 <Link href={`/products/${p.slug}`} data-cursor="View" className="overflow-hidden rounded-xl bg-card md:col-span-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={photo(p.slug)} alt={prod.t} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" />
+                  <img src={photo(p.slug)} alt={prod.t} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
                 </Link>
                 <div className="md:col-span-5">
                   <h2 className="t-h3">{prod.t}</h2>
