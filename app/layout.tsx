@@ -4,6 +4,7 @@ import "./globals.css";
 import Experience from "@/components/Experience";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument" });
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Nav />
           <main>{children}</main>
           <Footer />
+          <WhatsAppButton />
         </Experience>
       </body>
     </html>
