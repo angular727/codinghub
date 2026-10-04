@@ -8,13 +8,10 @@ import Lenis from "lenis";
 gsap.registerPlugin(ScrollTrigger);
 
 const GREETINGS = ["Hello", "Hola", "Bonjour", "مرحبا", "你好", "Namaste", "Ciao", "Salaam", "Hallo"];
-const LABELS: Record<string, string> = { "/": "Home", "/services": "Services", "/products": "Products", "/projects": "Projects", "/about": "About", "/contact": "Contact" };
 
 export default function Experience({ children }: { children: React.ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
   const loader = useRef<HTMLDivElement>(null);
-  const curtain = useRef<HTMLDivElement>(null);
-  const curtainLabel = useRef<HTMLParagraphElement>(null);
   const dot = useRef<HTMLDivElement>(null);
   const ring = useRef<HTMLDivElement>(null);
   const ringLabel = useRef<HTMLSpanElement>(null);
@@ -86,16 +83,8 @@ export default function Experience({ children }: { children: React.ReactNode }) 
       if (url.origin !== location.origin) return;
       if (url.pathname === location.pathname) { if (url.hash) return; e.preventDefault(); e.stopPropagation(); lenis.scrollTo(0); return; }
       e.preventDefault(); e.stopPropagation();
-      if (transitioning.current) return;
       transitioning.current = true;
-      const base = "/" + url.pathname.split("/")[1];
-      if (curtainLabel.current) curtainLabel.current.textContent = LABELS[url.pathname] || LABELS[base] || "CodingHub";
-      lenis.stop();
-      gsap.timeline()
-        .set(curtain.current, { display: "flex", yPercent: 100 })
-        .to(curtain.current, { yPercent: 0, duration: 0.75, ease: "expo.inOut" })
-        .fromTo(curtainLabel.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, "-=0.35")
-        .add(() => router.push(url.pathname + url.search + url.hash));
+      router.push(url.pathname + url.search + url.hash);
     };
     document.addEventListener("click", click, true);
     cleanups.push(() => document.removeEventListener("click", click, true));
@@ -148,11 +137,9 @@ export default function Experience({ children }: { children: React.ReactNode }) 
     }, root);
 
     if (transitioning.current) {
-      gsap.timeline({ delay: 0.25 })
-        .to(curtain.current, { yPercent: -100, duration: 0.9, ease: "expo.inOut" })
-        .add(() => { lenisRef.current?.start(); playHero(); }, "-=0.55")
-        .set(curtain.current, { display: "none" })
-        .add(() => { transitioning.current = false; });
+      lenisRef.current?.start();
+      playHero();
+      transitioning.current = false;
     }
 
     const t = setTimeout(() => ScrollTrigger.refresh(), 300);
@@ -166,10 +153,6 @@ export default function Experience({ children }: { children: React.ReactNode }) 
       <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[120] hidden h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime [@media(hover:hover)_and_(pointer:fine)]:block" />
       <div ref={ring} className="pointer-events-none fixed left-0 top-0 z-[119] hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-cream/60 [@media(hover:hover)_and_(pointer:fine)]:grid">
         <span ref={ringLabel} className="text-[5px] font-bold uppercase tracking-wider text-ink" />
-      </div>
-
-      <div ref={curtain} className="fixed inset-0 z-[96] hidden items-center justify-center bg-lime text-ink">
-        <p ref={curtainLabel} className="font-display text-[8vw] font-medium tracking-[-0.045em]" />
       </div>
 
       <div ref={loader} className="fixed inset-0 z-[100] bg-ink text-cream">

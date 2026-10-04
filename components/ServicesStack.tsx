@@ -47,15 +47,20 @@ export default function ServicesStack({ heading = true }: { heading?: boolean })
                     <Link href="/contact" data-magnetic className="mt-7 inline-flex items-center gap-3 rounded-full border border-cream/25 px-5 py-2.5 text-sm transition hover:border-lime hover:bg-lime hover:text-ink">Discuss this service <span>↗</span></Link>
                   </div>
                 </div>
-                <div data-cursor="View" className="relative h-[40vh] overflow-hidden md:col-span-7 md:h-auto">
+                <Link href={heading ? "/services" : "/contact"} aria-label={s.t} data-cursor="View" className="relative block h-[40vh] overflow-hidden md:col-span-7 md:h-auto">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={s.img} alt={s.t} loading="lazy" className="svc-img absolute inset-x-0 -top-[7%] h-[114%] w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-card/60 via-transparent to-transparent" />
-                </div>
+                </Link>
               </div>
             </div>
           </article>
         ))}
+        {heading && (
+          <div className="mt-14 flex justify-center">
+            <Link href="/services" data-magnetic className="inline-flex items-center gap-3 rounded-full border border-cream/25 px-7 py-3.5 text-sm transition hover:border-lime hover:bg-lime hover:text-ink">View all services <span>↗</span></Link>
+          </div>
+        )}
       </div>
     </section>
   );
