@@ -36,7 +36,7 @@ export default function ProductsHorizontal() {
             <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-ink/60">Industry solutions built, deployed and trusted by real organizations. Scroll to explore.</p>
           </div>
 
-          {products.map((p, i) => (
+          {products.slice(0, 4).map((p, i) => (
             <Link key={p.slug} href={`/products/${p.slug}`} data-cursor="View" className="group w-[72vw] shrink-0 md:w-[24vw]">
               <div className="relative aspect-[3/4] overflow-hidden rounded-[20px] bg-ink">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

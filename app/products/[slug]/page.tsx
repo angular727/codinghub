@@ -44,6 +44,44 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </div>
       </section>
 
+      <section className="mx-auto max-w-[1600px] border-t border-cream/15 px-6 py-24 md:px-10 md:py-32">
+        <div className="grid gap-px overflow-hidden rounded-[22px] border border-cream/15 bg-cream/15 md:grid-cols-4">
+          {[["Industry", p.tag], ["Focus areas", p.k.join(" · ")], ["Delivery", "Secure cloud platform"], ["Support", "Ongoing updates"]].map(([l, v]) => (
+            <div key={l} data-reveal className="bg-ink p-7">
+              <p className="t-eyebrow text-mute">{l}</p>
+              <p className="mt-3 font-display text-xl font-medium tracking-[-0.03em]">{v}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-20 grid gap-12 md:mt-28 md:grid-cols-3 md:gap-10">
+          {[
+            ["The challenge", `${p.tag} teams often juggle disconnected tools, paper records and manual follow-ups. That slows work down and makes it hard to see what is really happening.`],
+            ["Our solution", `${p.t} brings ${p.k.join(", ").toLowerCase()} together in one connected system, built around how the team already works and ready to use from day one.`],
+            ["The outcome", "Less manual work, clearer visibility and reliable reports, backed by ongoing support and updates from the CodingHub team."],
+          ].map(([h, t], k) => (
+            <div key={h} data-reveal data-delay={k * 0.1}>
+              <p className="font-display text-sm text-lime">0{k + 1}</p>
+              <h2 className="t-h3 mt-3">{h}</h2>
+              <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-cream/60">{t}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-20 md:mt-28">
+          <p className="t-eyebrow mb-8 text-mute">How we deliver</p>
+          <ol className="grid gap-6 md:grid-cols-4">
+            {[["Discover", "We learn your workflow and goals."], ["Build", "We design and develop the system around them."], ["Deploy", "We launch it securely on the cloud."], ["Support", "We keep improving it with you."]].map(([h, t], k) => (
+              <li key={h} data-reveal data-delay={k * 0.08} className="border-t border-cream/15 pt-5">
+                <span className="font-display text-sm text-lime">0{k + 1}</span>
+                <h3 className="mt-2 text-lg font-medium tracking-[-0.02em]">{h}</h3>
+                <p className="mt-1.5 text-sm text-cream/60">{t}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       <Link href={`/products/${next.slug}`} data-cursor="Next" className="group block border-y border-cream/15 px-6 py-14 md:px-10 md:py-20">
         <div className="mx-auto flex max-w-[1600px] items-end justify-between gap-6">
           <div>
