@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,18 +7,13 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const GREETINGS = ["Hello", "Hola", "Bonjour", "مرحبا", "你好", "Namaste", "Ciao", "Salaam", "Hallo"];
-
 export default function Experience({ children }: { children: React.ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
-  const loader = useRef<HTMLDivElement>(null);
   const dot = useRef<HTMLDivElement>(null);
   const ring = useRef<HTMLDivElement>(null);
   const ringLabel = useRef<HTMLSpanElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
   const transitioning = useRef(false);
-  const [count, setCount] = useState(0);
-  const [greet, setGreet] = useState(0);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -42,7 +37,6 @@ export default function Experience({ children }: { children: React.ReactNode }) 
     const tick = (t: number) => lenis.raf(t * 1000);
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
-    lenis.stop();
 
     const cleanups: (() => void)[] = [];
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
@@ -92,23 +86,6 @@ export default function Experience({ children }: { children: React.ReactNode }) 
     return () => { cleanups.forEach((f) => f()); gsap.ticker.remove(tick); lenis.destroy(); };
   }, [router]);
 
-  // preloader (first load only)
-  useEffect(() => {
-    const iv = setInterval(() => setGreet((g) => (g + 1) % GREETINGS.length), 230);
-    const c = { v: 0 };
-    const ctx = gsap.context(() => {
-      gsap.timeline({ delay: 0.2 })
-        .to(c, { v: 100, duration: 2.2, ease: "power2.inOut", onUpdate: () => setCount(Math.round(c.v)) })
-        .to(".loader-bar", { scaleX: 1, duration: 2.2, ease: "power2.inOut" }, 0)
-        .add(() => clearInterval(iv))
-        .to(".loader-content", { y: -30, opacity: 0, duration: 0.5, ease: "power2.in" })
-        .to(loader.current, { yPercent: -100, borderBottomLeftRadius: "50% 10vw", borderBottomRightRadius: "50% 10vw", duration: 1.1, ease: "expo.inOut" }, "-=0.1")
-        .add(() => { lenisRef.current?.start(); playHero(); }, "-=0.55")
-        .set(loader.current, { display: "none" });
-    }, root);
-    return () => { clearInterval(iv); ctx.revert(); };
-  }, []);
-
   // per-page scroll animations (re-run on route change)
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -136,11 +113,9 @@ export default function Experience({ children }: { children: React.ReactNode }) 
       gsap.to(".progress", { scaleX: 1, ease: "none", scrollTrigger: { scrub: 0.2, start: 0, end: "max" } });
     }, root);
 
-    if (transitioning.current) {
-      lenisRef.current?.start();
-      playHero();
-      transitioning.current = false;
-    }
+    lenisRef.current?.start();
+    playHero();
+    transitioning.current = false;
 
     const t = setTimeout(() => ScrollTrigger.refresh(), 300);
     return () => { clearTimeout(t); ctx.revert(); };
@@ -153,23 +128,6 @@ export default function Experience({ children }: { children: React.ReactNode }) 
       <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[120] hidden h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime [@media(hover:hover)_and_(pointer:fine)]:block" />
       <div ref={ring} className="pointer-events-none fixed left-0 top-0 z-[119] hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-cream/60 [@media(hover:hover)_and_(pointer:fine)]:grid">
         <span ref={ringLabel} className="text-[5px] font-bold uppercase tracking-wider text-ink" />
-      </div>
-
-      <div ref={loader} className="fixed inset-0 z-[100] bg-ink text-cream">
-        <div className="loader-content flex h-full flex-col justify-between p-6 md:p-12">
-          <p className="t-eyebrow text-mute">CodingHub · Software company</p>
-          <div className="flex items-center gap-4">
-            <span className="h-2.5 w-2.5 rounded-full bg-lime" />
-            <p dir="auto" className="font-display text-[9vw] font-medium leading-none tracking-[-0.045em] md:text-[5vw]">{GREETINGS[greet]}</p>
-          </div>
-          <div>
-            <div className="mb-4 h-px w-full overflow-hidden bg-cream/15"><div className="loader-bar h-full origin-left scale-x-0 bg-lime" /></div>
-            <div className="flex items-end justify-between">
-              <p className="max-w-[16rem] text-sm text-mute">Empowering businesses through innovative technology.</p>
-              <p className="font-display text-5xl font-medium tabular-nums leading-none tracking-[-0.05em] md:text-7xl">{count}</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {children}

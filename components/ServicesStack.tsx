@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Words } from "@/components/Words";
@@ -48,8 +49,9 @@ export default function ServicesStack({ heading = true }: { heading?: boolean })
                   </div>
                 </div>
                 <Link href={heading ? "/services" : "/contact"} aria-label={s.t} data-cursor="View" className="relative block h-[40vh] overflow-hidden md:col-span-7 md:h-auto">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.img} alt={s.t} loading="lazy" className="svc-img absolute inset-x-0 -top-[7%] h-[114%] w-full object-cover" />
+                  <div className="svc-img absolute inset-x-0 -top-[7%] h-[114%]">
+                    <Image src={s.img} alt={s.t} fill sizes="(min-width:768px) 58vw, 100vw" className="object-cover" />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-card/60 via-transparent to-transparent" />
                 </Link>
               </div>

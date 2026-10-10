@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Words } from "@/components/Words";
@@ -31,8 +32,9 @@ export default function Hero() {
       <div className="hero-photo absolute bottom-[12vh] right-[5vw] top-[14vh] z-10 hidden w-[34vw] max-w-[560px] lg:block">
         <div className="hero-fade absolute inset-0 -translate-x-4 translate-y-4 rounded-[30px] border border-lime/40" />
         <div className="hero-fade relative h-full overflow-hidden rounded-[30px] border border-cream/10 shadow-2xl shadow-black/60">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img data-parallax src="/photos/hero.jpg" alt="The CodingHub team at work" className="absolute inset-x-0 -top-[7%] h-[114%] w-full object-cover" />
+          <div data-parallax className="absolute inset-x-0 -top-[7%] h-[114%]">
+            <Image src="/photos/hero.jpg" alt="The CodingHub team at work" fill priority sizes="(min-width:1024px) 34vw, 0px" className="object-cover" />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-ink/10" />
         </div>
 
@@ -61,8 +63,7 @@ export default function Hero() {
 
       {/* photo (mobile / tablet) */}
       <div className="hero-fade relative z-10 mb-8 h-[34vh] overflow-hidden rounded-3xl border border-cream/10 lg:hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/photos/hero.jpg" alt="The CodingHub team at work" className="h-full w-full object-cover" />
+        <Image src="/photos/hero.jpg" alt="The CodingHub team at work" fill sizes="(max-width:1023px) 100vw, 0px" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
       </div>
 

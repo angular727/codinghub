@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { products, photo } from "@/lib/data";
 
@@ -14,8 +15,7 @@ export default function Page() {
           {products.map((p, i) => (
             <Link key={p.slug} href={`/products/${p.slug}`} data-reveal data-delay={(i % 3) * 0.08} data-cursor="View" className={`group block ${i % 3 === 1 ? "lg:mt-16" : ""}`}>
               <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-ink">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo(p.slug)} alt={p.t} loading="lazy" className="h-full w-full object-cover transition duration-[900ms] group-hover:scale-105" />
+                <Image src={photo(p.slug)} alt={p.t} fill sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw" className="object-cover transition duration-[900ms] group-hover:scale-105" />
                 <span className="t-eyebrow absolute left-4 top-4 rounded-full bg-cream px-3 py-1.5 text-[10px] font-medium">{p.tag}</span>
                 <span className="absolute bottom-4 right-4 font-display text-4xl font-medium leading-none tracking-[-0.05em] text-cream mix-blend-difference">0{i + 1}</span>
               </div>
