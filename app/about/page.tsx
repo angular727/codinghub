@@ -1,7 +1,7 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import Numbers from "@/components/Numbers";
-import ProcessPinned from "@/components/ProcessPinned";
+import Process from "@/components/Process";
 import Marquee from "@/components/Marquee";
 import { ScrubWords } from "@/components/Words";
 
@@ -17,8 +17,8 @@ export default function Page() {
   return (
     <>
       <PageHeader eyebrow="About" title="We build technology that" accent="helps businesses grow." text="A software company based in Rahim Yar Khan, Pakistan." image="/photos/team.jpg" />
-      <section className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
-        <p data-words className="t-lead max-w-5xl">
+      <section className="wrap py-24 md:py-32">
+        <p className="t-lead max-w-5xl">
           <ScrubWords text="CodingHub delivers industry solutions to organizations across healthcare, retail, food, education and more, from cloud web apps to AI, IoT and automation." />
         </p>
         <div className="mt-20 grid border-t border-cream/15 md:grid-cols-3">
@@ -33,7 +33,7 @@ export default function Page() {
       </section>
       <Marquee />
       <Numbers />
-      <ProcessPinned />
+      <Process />
     </>
   );
 }

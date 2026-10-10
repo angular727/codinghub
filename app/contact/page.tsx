@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       <PageHeader eyebrow="Contact" title="Let's build your" accent="next big thing." text="Tell us about your business and we will show you how technology can automate it." />
-      <section className="mx-auto max-w-[1600px] px-6 pb-12 md:px-10">
+      <section className="wrap pb-12">
         <div className="grid gap-16 border-t border-cream/15 pt-14 lg:grid-cols-12">
           <div data-reveal className="lg:col-span-7"><ContactForm /></div>
           <ul data-reveal className="lg:col-span-4 lg:col-start-9">

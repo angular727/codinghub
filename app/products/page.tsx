@@ -11,9 +11,9 @@ export default function Page() {
     <>
       <PageHeader eyebrow="Products" title="Industry solutions," accent="ready to deploy." text="Software built, deployed and trusted by real organizations." />
       <section className="bg-cream py-20 text-ink md:py-32">
-        <div className="mx-auto grid max-w-[1600px] gap-x-6 gap-y-14 px-6 md:grid-cols-2 md:px-10 lg:grid-cols-3">
+        <div className="grid wrap gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
           {products.map((p, i) => (
-            <Link key={p.slug} href={`/products/${p.slug}`} data-reveal data-delay={(i % 3) * 0.08} data-cursor="View" className={`group block ${i % 3 === 1 ? "lg:mt-16" : ""}`}>
+            <Link key={p.slug} href={`/products/${p.slug}`} data-reveal data-delay={(i % 3) * 0.08} className={`group block ${i % 3 === 1 ? "lg:mt-16" : ""}`}>
               <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-ink">
                 <Image src={photo(p.slug)} alt={p.t} fill sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw" className="object-cover transition duration-[900ms] group-hover:scale-105" />
                 <span className="t-eyebrow absolute left-4 top-4 rounded-full bg-cream px-3 py-1.5 text-[10px] font-medium">{p.tag}</span>

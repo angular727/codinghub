@@ -48,7 +48,7 @@ export default function ContactForm() {
         {["Web application", "Mobile app", "IoT solution", "AI integration", "Website", "Business automation", "A product demo"].map((o) => <option key={o}>{o}</option>)}
       </select>
       <textarea name="message" required rows={4} placeholder="Tell us about your business and what you want to achieve" className={field} />
-      <button disabled={status === "sending"} data-magnetic className="mt-8 inline-flex items-center gap-3 rounded-full bg-lime px-10 py-5 text-sm font-semibold text-ink transition hover:bg-cream disabled:opacity-60">{status === "sending" ? "Sending…" : "Send message"} <span>↗</span></button>
+      <button disabled={status === "sending"} className="mt-8 inline-flex items-center gap-3 rounded-full bg-lime px-10 py-5 text-sm font-semibold text-ink transition hover:bg-cream disabled:opacity-60">{status === "sending" ? "Sending…" : "Send message"} <span>↗</span></button>
       {status === "sent" && <p className="pt-3 text-sm text-lime">Thank you! Your message has been sent. We will get back to you soon.</p>}
       {status === "error" && <p className="pt-3 text-sm text-cream/70">Something went wrong. Please try again, or email us directly at info@codinghub.com.</p>}
     </form>

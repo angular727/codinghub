@@ -20,14 +20,14 @@ export default function Page() {
   return (
     <>
       <PageHeader eyebrow="Projects" title="Real systems," accent="running for real businesses." text="A selection of the solutions we have built and deployed." />
-      <section className="mx-auto max-w-[1600px] px-6 pb-24 md:px-10">
+      <section className="wrap pb-24">
         <ul className="border-t border-cream/15">
           {projects.map((p, i) => {
             const prod = getProduct(p.slug)!;
             return (
               <li key={p.slug} data-reveal className="group grid items-center gap-6 border-b border-cream/15 py-7 transition-all duration-500 hover:bg-cream/[0.03] md:grid-cols-12 md:gap-8 md:px-4">
                 <span className="font-display text-base text-lime md:col-span-1">0{i + 1}</span>
-                <Link href={`/products/${p.slug}`} data-cursor="View" className="overflow-hidden rounded-xl bg-card md:col-span-3">
+                <Link href={`/products/${p.slug}`} className="overflow-hidden rounded-xl bg-card md:col-span-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={photo(p.slug)} alt={prod.t} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
                 </Link>

@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ServicesStack from "@/components/ServicesStack";
-import ProcessPinned from "@/components/ProcessPinned";
+import Process from "@/components/Process";
 import Marquee from "@/components/Marquee";
 
 export const metadata: Metadata = { title: "Services" };
@@ -12,7 +12,7 @@ export default function Page() {
       <PageHeader eyebrow="Services" title="Technology that moves your" accent="business forward." text="Six integrated capabilities, delivered by one team." />
       <ServicesStack heading={false} />
       <Marquee rev />
-      <ProcessPinned />
+      <Process />
     </>
   );
 }

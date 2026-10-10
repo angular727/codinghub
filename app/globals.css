@@ -12,9 +12,6 @@
 }
 
 html { background: var(--color-ink); }
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-stopped { overflow: hidden; }
 
 body {
   background: var(--color-ink);
@@ -35,28 +32,25 @@ body {
 .t-eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; }
 .acc { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--color-lime); font-size: 1.1em; letter-spacing: -0.01em; }
 
-/* hidden until the entrance animation plays (safety net reveals after 0.8s, or at once with reduced motion) */
-.hero-split, .hero-fade { visibility: hidden; animation: show-late 0s .8s forwards; }
-@keyframes show-late { to { visibility: visible; } }
-@media (prefers-reduced-motion: reduce) { .hero-split, .hero-fade { visibility: visible; animation: none; } }
-.w-op { opacity: .16; display: inline-block; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+:focus-visible { outline: 2px solid var(--color-lime); outline-offset: 3px; border-radius: 6px; }
 
-.grain::after {
-  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 70; opacity: .06; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
+/* shared page width and side margins, used by every section */
+.wrap { margin-inline: auto; width: 100%; max-width: 1360px; padding-inline: 1.5rem; }
+@media (min-width: 768px) { .wrap { padding-inline: 3rem; } }
+@media (min-width: 1024px) { .wrap { padding-inline: 4rem; } }
 
-.marquee { display: flex; width: max-content; animation: marquee 36s linear infinite; }
+/* slow scrolling strip, pauses on hover and for reduced motion */
+.marquee { display: flex; width: max-content; animation: marquee 40s linear infinite; }
 .marquee-rev { animation-direction: reverse; }
+.group:hover .marquee { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
-@keyframes blink { 50% { opacity: .2 } }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
 
-.no-scrollbar { scrollbar-width: none; }
-.no-scrollbar::-webkit-scrollbar { display: none; }
+/* one gentle fade-in for blocks below the fold (added by Experience) */
+.rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.rv.rv-in { opacity: 1; transform: none; }
 
-@media (hover: hover) and (pointer: fine) {
-  html, a, button, [data-cursor] { cursor: none; }
-}
-
-.line-hover { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .5s cubic-bezier(.7,0,.2,1); }
+.line-hover { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s ease; }
 .line-hover:hover { background-size: 100% 1px; }

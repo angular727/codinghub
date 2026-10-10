@@ -17,10 +17,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geist.variable} ${instrument.variable}`}>
-      <body className="grain">
+      <body>
         <Experience>
+          <a href="#main" className="sr-only z-[200] rounded-full bg-lime px-5 py-3 text-sm font-medium text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to content</a>
           <Nav />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer />
           <WhatsAppButton />
         </Experience>
