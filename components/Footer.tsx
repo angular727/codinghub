@@ -23,11 +23,11 @@ export default function Footer() {
 
           <div className="relative grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="t-eyebrow mb-7 flex items-center gap-3 text-cream/70"><span className="h-2 w-2 rounded-full bg-lime" />Got a project in mind?</p>
+            <p className="t-eyebrow mb-7 flex items-center gap-3 text-cream/80"><span className="h-2 w-2 rounded-full bg-lime" />Got a project in mind?</p>
             <h2 className="t-h1" style={{ fontSize: "clamp(2.2rem, 5vw, 4.4rem)" }}>
               <Words text="Let's build something" /> <Words text="remarkable." className="acc" />
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/65 md:text-lg">Tell us about your business. We will reply with a clear plan, timeline and next steps.</p>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/80 md:text-lg">Tell us about your business. We will reply with a clear plan, timeline and next steps.</p>
 
             <div className="mt-10 flex flex-wrap gap-3">
               <Link href="/contact" className="inline-flex h-14 items-center gap-2 rounded-full bg-lime px-8 text-sm font-semibold text-ink transition hover:bg-cream">Start a project <span aria-hidden="true">↗</span></Link>
@@ -72,11 +72,11 @@ export default function Footer() {
         <div data-reveal className="wrap grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-20">
           <div className="sm:col-span-2 lg:col-span-4 lg:pr-10">
             <Link href="/" className="font-display text-2xl font-medium tracking-[-0.04em]">CodingHub</Link>
-            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-cream/60">Empowering businesses through innovative technology solutions. We help businesses automate their processes and grow.</p>
+            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-cream/75">Empowering businesses through innovative technology solutions. We help businesses automate their processes and grow.</p>
             <ul className="mt-7 flex gap-3">
               {social.map(({ n, h, icon }) => (
                 <li key={n}>
-                  <a href={h} aria-label={n} className="grid h-10 w-10 place-items-center rounded-full border border-cream/15 text-cream/70 transition hover:border-lime hover:bg-lime hover:text-ink">
+                  <a href={h} aria-label={n} className="grid h-10 w-10 place-items-center rounded-full border border-cream/15 text-cream/80 transition hover:border-lime hover:bg-lime hover:text-ink">
                     <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icon}</svg>
                   </a>
                 </li>
@@ -85,29 +85,29 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Company" className="lg:col-span-2">
-            <p className="t-eyebrow mb-5 text-cream/45">Company</p>
-            <ul className="space-y-3.5 text-[15px]">{menu.map(([x, h]) => <li key={x}><Link href={h} className="text-cream/75 transition hover:text-lime">{x}</Link></li>)}</ul>
+            <p className="t-eyebrow mb-5 text-cream/70">Company</p>
+            <ul className="space-y-3.5 text-[15px]">{menu.map(([x, h]) => <li key={x}><Link href={h} className="text-cream/85 transition hover:text-lime">{x}</Link></li>)}</ul>
           </nav>
 
           <nav aria-label="Services" className="lg:col-span-2">
-            <p className="t-eyebrow mb-5 text-cream/45">Services</p>
-            <ul className="space-y-3.5 text-[15px]">{services.map((s) => <li key={s.t}><Link href="/services" className="text-cream/75 transition hover:text-lime">{s.t}</Link></li>)}</ul>
+            <p className="t-eyebrow mb-5 text-cream/70">Services</p>
+            <ul className="space-y-3.5 text-[15px]">{services.map((s) => <li key={s.t}><Link href="/services" className="text-cream/85 transition hover:text-lime">{s.t}</Link></li>)}</ul>
           </nav>
 
           <div className="lg:col-span-4">
-            <p className="t-eyebrow mb-5 text-cream/45">Get in touch</p>
+            <p className="t-eyebrow mb-5 text-cream/70">Get in touch</p>
             <ul className="space-y-5 text-[15px]">
               <li>
-                <span className="block text-xs text-cream/45">Phone</span>
+                <span className="block text-[13px] text-cream/70">Phone</span>
                 <a href="tel:+923058444160" className="mt-1 inline-block text-cream/90 transition hover:text-lime">+92 305 8444160</a>
               </li>
               <li>
-                <span className="block text-xs text-cream/45">Email</span>
+                <span className="block text-[13px] text-cream/70">Email</span>
                 <a href="mailto:codinghubpro@gmail.com" className="mt-1 inline-block break-words text-cream/90 transition hover:text-lime">codinghubpro@gmail.com</a>
               </li>
               <li>
-                <span className="block text-xs text-cream/45">Studio</span>
-                <p className="mt-1 max-w-xs leading-relaxed text-cream/75">Shahab Town, St #2, Khanpur Rd, near Ada Iqbal Nagar, Rahim Yar Khan, Pakistan</p>
+                <span className="block text-[13px] text-cream/70">Studio</span>
+                <p className="mt-1 max-w-xs leading-relaxed text-cream/85">Shahab Town, St #2, Khanpur Rd, near Ada Iqbal Nagar, Rahim Yar Khan, Pakistan</p>
               </li>
             </ul>
           </div>
@@ -115,7 +115,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-6 text-xs text-cream/45">
+        <div className="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-6 text-[13px] text-cream/70">
           <p>© 2026 CodingHub. All rights reserved.</p>
           <p className="hidden sm:block">Photography via Unsplash</p>
           <a href="#main" className="inline-flex items-center gap-2 transition hover:text-lime">Back to top <span aria-hidden="true">↑</span></a>

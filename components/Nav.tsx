@@ -25,12 +25,12 @@ export default function Nav() {
 
         <nav className="hidden items-center md:flex">
           {links.map(({ l, h }) => (
-            <Link key={h} href={h} className={`rounded-full px-4 py-2 text-[13px] transition ${on(h) ? "bg-cream/10 text-cream" : "text-cream/60 hover:text-cream"} hover:[-webkit-text-stroke:0.5px_currentColor]`}>{l}</Link>
+            <Link key={h} href={h} className={`rounded-full px-4 py-2 text-sm transition ${on(h) ? "bg-cream/10 text-cream" : "text-cream/75 hover:text-cream"} hover:[-webkit-text-stroke:0.5px_currentColor]`}>{l}</Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <Link href="/contact" className="hidden rounded-full bg-lime px-4 py-2 text-[13px] font-medium text-ink transition hover:bg-cream sm:inline-block">Let&apos;s talk</Link>
+          <Link href="/contact" className="hidden rounded-full bg-lime px-4 py-2 text-sm font-medium text-ink transition hover:bg-cream sm:inline-block">Let&apos;s talk</Link>
           <button onClick={() => setOpen((o) => !o)} aria-label="Menu" className="grid h-9 w-9 place-items-center rounded-full border border-cream/15 md:hidden">
             <span className="relative block h-2 w-4">
               <span className={`absolute left-0 h-px w-4 bg-current transition-all duration-300 ${open ? "top-[3.5px] rotate-45" : "top-0"}`} />
@@ -46,12 +46,12 @@ export default function Nav() {
           {[...links, { l: "Contact", h: "/contact" }].map(({ l, h }, i) => (
             <li key={h} className="m-item">
               <Link href={h} className={`flex items-baseline gap-4 border-b border-cream/10 py-3 text-xl font-medium tracking-[-0.03em] ${on(h) ? "text-lime" : ""}`}>
-                <span className="w-5 text-[11px] text-mute">0{i + 1}</span>{l}
+                <span className="w-5 text-[13px] text-mute">0{i + 1}</span>{l}
               </Link>
             </li>
           ))}
         </ul>
-        <div className="m-item mt-4 text-xs text-mute">
+        <div className="m-item mt-4 text-[13px] text-mute">
           <a href="mailto:codinghubpro@gmail.com">codinghubpro@gmail.com</a>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function Process() {
           <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />Our process</p>
           <h2 className="t-h1"><Words text="How we" /> <Words text="work" className="acc" /></h2>
         </div>
-        <p className="max-w-xs text-sm leading-relaxed text-cream/60">A proven, transparent path from first idea to a system your team relies on every day.</p>
+        <p className="max-w-xs text-sm leading-relaxed text-cream/75">A proven, transparent path from first idea to a system your team relies on every day.</p>
       </div>
 
       <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -25,10 +25,10 @@ export default function Process() {
               <span className="grid h-12 w-12 place-items-center rounded-xl border border-cream/10 bg-ink text-lime">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{s.icon}</svg>
               </span>
-              <span className="font-display text-5xl font-medium leading-none tracking-[-0.05em] text-cream/10 transition group-hover:text-lime/30">0{i + 1}</span>
+              <span className="font-display text-5xl font-medium leading-none tracking-[-0.05em] text-cream/50 transition group-hover:text-lime/30">0{i + 1}</span>
             </div>
             <h3 className="t-h3 mt-10">{s.t}</h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-cream/60">{s.d}</p>
+            <p className="mt-3 text-[15px] leading-relaxed text-cream/75">{s.d}</p>
           </li>
         ))}
       </ol>

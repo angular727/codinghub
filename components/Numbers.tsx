@@ -18,7 +18,7 @@ export default function Numbers() {
             <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />CodingHub in numbers</p>
             <h2 className="t-h1 max-w-2xl">Built to scale with <span className="acc">your business.</span></h2>
           </div>
-          <p className="max-w-xs text-sm leading-relaxed text-cream/60">One focused team delivering reliable, cloud-based software with long-term support.</p>
+          <p className="max-w-xs text-sm leading-relaxed text-cream/75">One focused team delivering reliable, cloud-based software with long-term support.</p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -27,7 +27,7 @@ export default function Numbers() {
               <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-lime/70 to-transparent" />
               <p className="t-num">{s.n}<span className="text-lime">{s.s}</span></p>
               <p className="mt-5 text-base font-medium">{s.l}</p>
-              <p className="mt-2 text-sm leading-relaxed text-cream/55">{s.d}</p>
+              <p className="mt-2 text-sm leading-relaxed text-cream/72">{s.d}</p>
             </div>
           ))}
         </div>

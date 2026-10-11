@@ -34,12 +34,12 @@ export default function Page() {
                 <div className="md:col-span-5">
                   <h2 className="t-h3">{prod.t}</h2>
                   <p className="t-eyebrow mt-1.5 text-lime">{p.i}</p>
-                  <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/60">{p.d}</p>
-                  {p.stack.length > 0 && <div className="mt-3 flex flex-wrap gap-2">{p.stack.map((s) => <span key={s} className="rounded-full border border-cream/20 px-3 py-1 text-xs text-cream/70">{s}</span>)}</div>}
+                  <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/75">{p.d}</p>
+                  {p.stack.length > 0 && <div className="mt-3 flex flex-wrap gap-2">{p.stack.map((s) => <span key={s} className="rounded-full border border-cream/20 px-3 py-1 text-[13px] text-cream/80">{s}</span>)}</div>}
                 </div>
                 <div className="flex flex-wrap items-center gap-3 md:col-span-3 md:justify-end">
-                  <span className="rounded-full bg-cream/10 px-4 py-1.5 text-xs">{p.s}</span>
-                  {p.href && <a href={p.href} target="_blank" rel="noopener noreferrer" className="rounded-full bg-lime px-5 py-2.5 text-xs font-medium text-ink transition hover:bg-cream">Open live demo ↗</a>}
+                  <span className="rounded-full bg-cream/10 px-4 py-1.5 text-[13px]">{p.s}</span>
+                  {p.href && <a href={p.href} target="_blank" rel="noopener noreferrer" className="rounded-full bg-lime px-5 py-2.5 text-[13px] font-medium text-ink transition hover:bg-cream">Open live demo ↗</a>}
                 </div>
               </li>
             );

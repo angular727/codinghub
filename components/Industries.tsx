@@ -21,7 +21,7 @@ export default function Industries() {
           <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />Industries we serve</p>
           <h2 className="t-h1 max-w-3xl"><Words text="Software for" /> <Words text="every kind of" className="acc" /> <Words text="business." /></h2>
         </div>
-        <p className="max-w-xs text-sm leading-relaxed text-cream/60">Purpose-built products for the sectors we know best, each ready to deploy and tailored to your workflow.</p>
+        <p className="max-w-xs text-sm leading-relaxed text-cream/75">Purpose-built products for the sectors we know best, each ready to deploy and tailored to your workflow.</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -31,11 +31,11 @@ export default function Industries() {
               <span className="grid h-12 w-12 place-items-center rounded-xl border border-cream/10 bg-ink text-lime">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icon}</svg>
               </span>
-              <span className="text-xs text-mute">0{i + 1}</span>
+              <span className="text-[13px] text-mute">0{i + 1}</span>
             </div>
             <h3 className="t-h3 mt-10">{t}</h3>
-            <p className="mt-2 text-sm text-cream/55">{getProduct(s)?.t}</p>
-            <span className="mt-6 inline-flex items-center gap-2 text-sm text-cream/80 transition group-hover:text-lime">Learn more <span className="transition group-hover:translate-x-0.5">→</span></span>
+            <p className="mt-2 text-sm text-cream/72">{getProduct(s)?.t}</p>
+            <span className="mt-6 inline-flex items-center gap-2 text-sm text-cream/88 transition group-hover:text-lime">Learn more <span className="transition group-hover:translate-x-0.5">→</span></span>
           </Link>
         ))}
       </div>

@@ -18,7 +18,7 @@ export default function PageHeader({ eyebrow, title, accent, text, crumbs, image
           <h1 className="t-h1 md:col-span-8">
             <Words text={title} />{accent && <> <Words text={accent} className="acc" /></>}
           </h1>
-          {text && <p className="text-[15px] leading-relaxed text-cream/60 md:col-span-3 md:col-start-10">{text}</p>}
+          {text && <p className="text-[15px] leading-relaxed text-cream/75 md:col-span-3 md:col-start-10">{text}</p>}
         </div>
         {art && (
           <div className="relative mt-14 h-[40vh] overflow-hidden rounded-[26px] border border-cream/10 md:h-[56vh]">{art}</div>

@@ -10,7 +10,7 @@ export default function ServicesStack({ heading = true }: { heading?: boolean })
         {heading && (
           <div data-reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
             <h2 className="t-h1"><Words text="What we" /> <Words text="do" className="acc" /></h2>
-            <p className="max-w-xs text-sm leading-relaxed text-cream/60">Six integrated capabilities, delivered by one team: from the first idea to a scalable solution.</p>
+            <p className="max-w-xs text-sm leading-relaxed text-cream/75">Six integrated capabilities, delivered by one team: from the first idea to a scalable solution.</p>
           </div>
         )}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -22,7 +22,7 @@ export default function ServicesStack({ heading = true }: { heading?: boolean })
               <div className="flex flex-1 flex-col p-7">
                 <p className="font-display text-sm text-lime">0{i + 1}</p>
                 <h3 className="t-h3 mt-3">{s.t}</h3>
-                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-cream/60">{s.d}</p>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-cream/75">{s.d}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm text-cream transition group-hover:text-lime">Learn more <span aria-hidden="true">→</span></span>
               </div>
             </Link>

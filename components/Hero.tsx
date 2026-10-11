@@ -12,13 +12,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/50" />
 
       <div className="wrap relative pb-10 pt-32 md:pb-14 md:pt-36">
-        <p className="t-eyebrow mb-7 flex items-center gap-3 text-cream/75">
+        <p className="t-eyebrow mb-7 flex items-center gap-3 text-cream/85">
           <span className="h-2 w-2 rounded-full bg-lime" />Software company · Rahim Yar Khan
         </p>
         <h1 className="t-hero max-w-[18ch]" style={{ fontSize: "clamp(2.6rem, 6vw, 5.6rem)" }}>
           Empowering businesses through <span className="acc">innovative</span> technology.
         </h1>
-        <p className="mt-8 max-w-xl text-base leading-relaxed text-cream/75 md:text-lg">
+        <p className="mt-8 max-w-xl text-base leading-relaxed text-cream/85 md:text-lg">
           Cloud web apps, cross-platform mobile apps, IoT, AI and business automation, built to help your organization automate its processes and grow.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
@@ -30,7 +30,7 @@ export default function Hero() {
           {stats.map(([n, l], i) => (
             <div key={l} className={i ? "md:border-l md:border-cream/15 md:pl-8" : ""}>
               <dt className="font-display text-3xl font-medium tracking-[-0.04em] md:text-5xl">{n}</dt>
-              <dd className="mt-2 text-xs text-cream/65 md:text-sm">{l}</dd>
+              <dd className="mt-2 text-[13px] text-cream/80 md:text-sm">{l}</dd>
             </div>
           ))}
         </dl>

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const field = "w-full border-b border-cream/25 bg-transparent px-0 py-5 text-lg text-cream outline-none transition placeholder:text-cream/35 focus:border-lime";
+const field = "w-full border-b border-cream/50 bg-transparent px-0 py-5 text-lg text-cream outline-none transition placeholder:text-cream/60 focus:border-lime";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -50,7 +50,7 @@ export default function ContactForm() {
       <textarea name="message" required rows={4} placeholder="Tell us about your business and what you want to achieve" className={field} />
       <button disabled={status === "sending"} className="mt-8 inline-flex items-center gap-3 rounded-full bg-lime px-10 py-5 text-sm font-semibold text-ink transition hover:bg-cream disabled:opacity-60">{status === "sending" ? "Sending…" : "Send message"} <span>↗</span></button>
       {status === "sent" && <p className="pt-3 text-sm text-lime">Thank you! Your message has been sent. We will get back to you soon.</p>}
-      {status === "error" && <p className="pt-3 text-sm text-cream/70">Something went wrong. Please try again, or email us directly at codinghubpro@gmail.com.</p>}
+      {status === "error" && <p className="pt-3 text-sm text-cream/80">Something went wrong. Please try again, or email us directly at codinghubpro@gmail.com.</p>}
     </form>
   );
 }

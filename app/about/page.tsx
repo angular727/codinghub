@@ -26,7 +26,7 @@ export default function Page() {
             <div key={v.t} data-reveal data-delay={i * 0.08} className="border-b border-cream/15 py-10 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0">
               <p className="font-display text-base text-lime">0{i + 1}</p>
               <h2 className="t-h2 mt-6">{v.t}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-cream/60">{v.d}</p>
+              <p className="mt-3 text-sm leading-relaxed text-cream/75">{v.d}</p>
             </div>
           ))}
         </div>

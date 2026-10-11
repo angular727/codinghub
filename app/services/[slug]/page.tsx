@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <div data-reveal className="lg:col-span-7">
             <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />Overview</p>
             <h2 className="t-h2 max-w-2xl">What {s.t} means for your business</h2>
-            <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-cream/70">
+            <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-cream/80">
               {d.overview.map((t) => <p key={t}>{t}</p>)}
             </div>
             <Link href="/contact" className="mt-10 inline-flex h-14 items-center gap-2 rounded-full bg-lime px-8 text-sm font-semibold text-ink transition hover:bg-cream">Discuss this service <span aria-hidden="true">↗</span></Link>
@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <div className="rounded-[22px] border border-cream/10 bg-card p-7">
               <p className="t-eyebrow text-mute">Technology we use</p>
               <ul className="mt-5 flex flex-wrap gap-2.5">
-                {d.tech.map((t) => <li key={t} className="rounded-full border border-cream/15 px-4 py-2 text-sm text-cream/80">{t}</li>)}
+                {d.tech.map((t) => <li key={t} className="rounded-full border border-cream/15 px-4 py-2 text-sm text-cream/88">{t}</li>)}
               </ul>
             </div>
           </aside>
@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               <div key={f.t} data-reveal data-delay={(k % 3) * 0.06} className="rounded-[20px] border border-cream/10 bg-card p-7 transition duration-300 hover:-translate-y-1 hover:border-lime/50">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-lime/15 text-lime">{check}</span>
                 <h3 className="t-h3 mt-6">{f.t}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-cream/60">{f.d}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-cream/75">{f.d}</p>
               </div>
             ))}
           </div>
@@ -93,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   )}
                   <span className="min-w-0">
                     <span className="block text-lg font-medium tracking-[-0.01em] transition group-hover:text-lime">{e.t}</span>
-                    <span className="mt-1.5 block text-sm leading-relaxed text-cream/60">{e.d}</span>
+                    <span className="mt-1.5 block text-sm leading-relaxed text-cream/75">{e.d}</span>
                   </span>
                 </Link>
               );
@@ -112,9 +112,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {d.steps.map((st, k) => (
               <li key={st.t} data-reveal data-delay={k * 0.06} className="rounded-[20px] border border-cream/10 bg-card p-7">
-                <span className="font-display text-5xl font-medium leading-none tracking-[-0.05em] text-cream/10">0{k + 1}</span>
+                <span className="font-display text-5xl font-medium leading-none tracking-[-0.05em] text-cream/50">0{k + 1}</span>
                 <h3 className="t-h3 mt-8">{st.t}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-cream/60">{st.d}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-cream/75">{st.d}</p>
               </li>
             ))}
           </ol>
@@ -127,7 +127,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <div data-reveal className="lg:col-span-4">
             <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />FAQ</p>
             <h2 className="t-h1">Common questions</h2>
-            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-cream/60">Anything else you want to know? Ask us and we will walk you through it.</p>
+            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-cream/75">Anything else you want to know? Ask us and we will walk you through it.</p>
             <Link href="/contact" className="mt-8 inline-flex h-12 items-center gap-2 rounded-full border border-cream/25 px-6 text-sm font-semibold transition hover:border-lime hover:bg-lime hover:text-ink">Contact us <span aria-hidden="true">↗</span></Link>
           </div>
           <div data-reveal data-delay={0.08} className="divide-y divide-cream/10 border-y border-cream/10 lg:col-span-8">
@@ -137,7 +137,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   {f.q}
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-cream/20 text-lg transition group-open:rotate-45 group-open:border-lime group-open:text-lime" aria-hidden="true">+</span>
                 </summary>
-                <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cream/65">{f.a}</p>
+                <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cream/80">{f.a}</p>
               </details>
             ))}
           </div>
@@ -149,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <div className="wrap py-16 md:py-20">
           <div data-reveal className="mb-8 flex flex-wrap items-end justify-between gap-4 md:mb-10">
             <h2 className="t-h2">More services</h2>
-            <Link href="/services" className="inline-flex items-center gap-2 text-sm text-cream/70 transition hover:text-lime">View all services <span aria-hidden="true">→</span></Link>
+            <Link href="/services" className="inline-flex items-center gap-2 text-sm text-cream/80 transition hover:text-lime">View all services <span aria-hidden="true">→</span></Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((m, k) => (
