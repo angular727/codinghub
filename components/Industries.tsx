@@ -16,7 +16,7 @@ const industries: { t: string; s: string; icon: React.ReactNode }[] = [
 export default function Industries() {
   return (
     <section className="wrap py-20 md:py-28">
-      <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
+      <div data-reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
         <div>
           <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />Industries we serve</p>
           <h2 className="t-h1 max-w-3xl"><Words text="Software for" /> <Words text="every kind of" className="acc" /> <Words text="business." /></h2>

@@ -7,7 +7,7 @@ export default function ProductsHorizontal() {
   return (
     <section className="bg-cream py-20 text-ink md:py-28">
       <div className="wrap">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
+        <div data-reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
           <div>
             <p className="t-eyebrow mb-5 flex items-center gap-3 text-ink/50"><span className="h-2 w-2 rounded-full bg-ink" />Products</p>
             <h2 className="t-h1">Our <span className="font-serif font-normal italic text-[1.1em]">products</span></h2>

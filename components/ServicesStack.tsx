@@ -8,7 +8,7 @@ export default function ServicesStack({ heading = true }: { heading?: boolean })
     <section className="pb-20 md:pb-28">
       <div className="wrap">
         {heading && (
-          <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
+          <div data-reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
             <h2 className="t-h1"><Words text="What we" /> <Words text="do" className="acc" /></h2>
             <p className="max-w-xs text-sm leading-relaxed text-cream/60">Six integrated capabilities, delivered by one team: from the first idea to a scalable solution.</p>
           </div>

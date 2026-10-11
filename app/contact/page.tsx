@@ -5,8 +5,8 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = { title: "Contact" };
 
 const info = [
-  ["Email", "info@codinghub.com", "mailto:info@codinghub.com"],
-  ["Phone", "+92 305 4948160", "tel:+923054948160"],
+  ["Email", "codinghubpro@gmail.com", "mailto:codinghubpro@gmail.com"],
+  ["Phone", "+92 305 8444160", "tel:+923058444160"],
   ["Studio", "Shahab Town, St #2, Khanpur Rd, near Ada Iqbal Nagar, Rahim Yar Khan", "#"],
 ];
 

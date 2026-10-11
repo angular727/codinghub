@@ -4,7 +4,7 @@ import { ScrubWords } from "@/components/Words";
 export default function Statement() {
   return (
     <section className="wrap py-28 md:py-44">
-      <div className="grid gap-10 md:grid-cols-12">
+      <div data-reveal className="grid gap-10 md:grid-cols-12">
         <p data-reveal className="t-eyebrow flex items-start gap-3 text-mute md:col-span-3"><span className="mt-1 h-2 w-2 rounded-full bg-lime" />About CodingHub</p>
         <div className="md:col-span-9">
           <p className="t-lead">

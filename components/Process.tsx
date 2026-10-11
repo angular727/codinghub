@@ -10,7 +10,7 @@ const steps = [
 export default function Process() {
   return (
     <section className="wrap py-20 md:py-28">
-      <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
+      <div data-reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
         <div>
           <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />Our process</p>
           <h2 className="t-h1"><Words text="How we" /> <Words text="work" className="acc" /></h2>

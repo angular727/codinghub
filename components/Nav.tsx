@@ -22,7 +22,7 @@ export default function Nav() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-4 z-[90] flex flex-col items-center px-4">
       <div className="pointer-events-auto flex w-full max-w-[44rem] items-center justify-between gap-1 rounded-full border border-cream/15 bg-ink/90 p-1.5 pl-5 shadow-lg shadow-black/30 backdrop-blur-xl md:w-auto md:max-w-none">
-        <Link href="/" className="mr-3 font-display text-[17px] font-medium tracking-[-0.04em] transition hover:[-webkit-text-stroke:0.5px_currentColor]">CodingHub<span className="text-lime">.</span></Link>
+        <Link href="/" className="mr-3 font-display text-[17px] font-medium tracking-[-0.04em] transition hover:[-webkit-text-stroke:0.5px_currentColor]">CodingHub</Link>
 
         <nav className="hidden items-center md:flex">
           {links.map(({ l, h }) => (
@@ -53,7 +53,7 @@ export default function Nav() {
           ))}
         </ul>
         <div className="m-item mt-4 flex items-center justify-between text-xs text-mute">
-          <a href="mailto:info@codinghub.com">info@codinghub.com</a>
+          <a href="mailto:codinghubpro@gmail.com">codinghubpro@gmail.com</a>
           <LocalTime />
         </div>
       </div>

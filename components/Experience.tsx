@@ -13,8 +13,11 @@ export default function Experience({ children }: { children: React.ReactNode }) 
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
-        e.target.classList.add("rv-in");
-        io.unobserve(e.target);
+        const el = e.target as HTMLElement;
+        el.classList.add("rv-in");
+        io.unobserve(el);
+        // drop the stagger delay afterwards so hover effects stay instant
+        setTimeout(() => { el.style.transitionDelay = ""; }, 1200);
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
 

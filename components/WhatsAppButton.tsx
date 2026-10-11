@@ -1,4 +1,4 @@
-const NUMBER = "923054948160";
+const NUMBER = "923058444160";
 const MESSAGE = "Hello CodingHub, I would like to know more about your services.";
 
 export default function WhatsAppButton() {
