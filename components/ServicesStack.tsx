@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import ServiceArt from "@/components/ServiceArt";
 import { Words } from "@/components/Words";
 import { services } from "@/lib/data";
 
@@ -15,17 +15,17 @@ export default function ServicesStack({ heading = true }: { heading?: boolean })
         )}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <article key={s.t} data-reveal className="group flex flex-col overflow-hidden rounded-[22px] border border-cream/10 bg-card transition hover:border-cream/25">
+            <Link key={s.t} href={`/services/${s.slug}`} data-reveal className="group flex flex-col overflow-hidden rounded-[22px] border border-cream/10 bg-card transition hover:border-lime/50">
               <div className="relative aspect-[16/10] overflow-hidden">
-                <Image src={s.img} alt={s.t} fill sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+                <div className="absolute inset-0 transition duration-500 group-hover:scale-[1.03]"><ServiceArt slug={s.slug} /></div>
               </div>
               <div className="flex flex-1 flex-col p-7">
                 <p className="font-display text-sm text-lime">0{i + 1}</p>
                 <h3 className="t-h3 mt-3">{s.t}</h3>
                 <p className="mt-3 flex-1 text-[15px] leading-relaxed text-cream/60">{s.d}</p>
-                <Link href="/contact" className="mt-6 inline-flex items-center gap-2 text-sm text-cream transition hover:text-lime">Discuss this service <span>↗</span></Link>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm text-cream transition group-hover:text-lime">Learn more <span aria-hidden="true">→</span></span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         {heading && (

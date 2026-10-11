@@ -1,5 +1,4 @@
 import Link from "next/link";
-import LocalTime from "@/components/LocalTime";
 import { Words } from "@/components/Words";
 import { products, services } from "@/lib/data";
 
@@ -109,7 +108,6 @@ export default function Footer() {
               <li>
                 <span className="block text-xs text-cream/45">Studio</span>
                 <p className="mt-1 max-w-xs leading-relaxed text-cream/75">Shahab Town, St #2, Khanpur Rd, near Ada Iqbal Nagar, Rahim Yar Khan, Pakistan</p>
-                <p className="mt-2 flex items-center gap-2 text-xs text-cream/50"><span className="h-1.5 w-1.5 rounded-full bg-lime" /><LocalTime /></p>
               </li>
             </ul>
           </div>

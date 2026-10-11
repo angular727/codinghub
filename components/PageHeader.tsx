@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Words } from "@/components/Words";
 
-export default function PageHeader({ eyebrow, title, accent, text, crumbs, image }: {
-  eyebrow: string; title: string; accent?: string; text?: string; crumbs?: [string, string][]; image?: string;
+export default function PageHeader({ eyebrow, title, accent, text, crumbs, image, art }: {
+  eyebrow: string; title: string; accent?: string; text?: string; crumbs?: [string, string][]; image?: string; art?: React.ReactNode;
 }) {
   return (
     <section className="pb-12 pt-36 md:pt-44">
@@ -20,6 +20,9 @@ export default function PageHeader({ eyebrow, title, accent, text, crumbs, image
           </h1>
           {text && <p className="text-[15px] leading-relaxed text-cream/60 md:col-span-3 md:col-start-10">{text}</p>}
         </div>
+        {art && (
+          <div className="relative mt-14 h-[40vh] overflow-hidden rounded-[26px] border border-cream/10 md:h-[56vh]">{art}</div>
+        )}
         {image && (
           <div className="relative mt-14 h-[40vh] overflow-hidden rounded-[26px] md:h-[60vh]">
             <Image src={image} alt="" fill priority sizes="(min-width:1600px) 1600px, 100vw" className="object-cover" />

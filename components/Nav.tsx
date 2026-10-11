@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import LocalTime from "@/components/LocalTime";
 
 const links = [
   { l: "Home", h: "/" },
@@ -52,9 +51,8 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-        <div className="m-item mt-4 flex items-center justify-between text-xs text-mute">
+        <div className="m-item mt-4 text-xs text-mute">
           <a href="mailto:codinghubpro@gmail.com">codinghubpro@gmail.com</a>
-          <LocalTime />
         </div>
       </div>
     </header>

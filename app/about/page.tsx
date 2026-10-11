@@ -16,7 +16,7 @@ const values = [
 export default function Page() {
   return (
     <>
-      <PageHeader eyebrow="About" title="We build technology that" accent="helps businesses grow." text="A software company based in Rahim Yar Khan, Pakistan." image="/photos/team.jpg" />
+      <PageHeader eyebrow="About" title="We build technology that" accent="helps businesses grow." text="A software company based in Rahim Yar Khan, Pakistan." image="/photos/team.webp" />
       <section className="wrap py-24 md:py-32">
         <p className="t-lead max-w-5xl">
           <ScrubWords text="CodingHub delivers industry solutions to organizations across healthcare, retail, food, education and more, from cloud web apps to AI, IoT and automation." />

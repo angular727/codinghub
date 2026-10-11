@@ -7,15 +7,15 @@ export type Product = {
   m: { t: string; d: string }[];
 };
 
-export const photo = (slug: string) => `/photos/${slug}.jpg`;
+export const photo = (slug: string) => `/photos/${slug}.webp`;
 
 export const services = [
-  { t: "Cloud-Based Web Applications", d: "Full-stack web solutions designed to scale with your business.", img: "/photos/webapp.jpg" },
-  { t: "Cross-Platform Mobile Apps", d: "Beautiful, responsive mobile applications that work seamlessly across iOS and Android.", img: "/photos/mobile.jpg" },
-  { t: "IoT Solutions", d: "Connect and automate your devices with cutting-edge Internet of Things technology.", img: "/photos/iot.jpg" },
-  { t: "AI Integration", d: "Harness the power of artificial intelligence to transform your business processes.", img: "/photos/ai.jpg" },
-  { t: "Website Development", d: "Professional, modern websites that represent your brand and engage your customers.", img: "/photos/website.jpg" },
-  { t: "Business Automation", d: "Streamline your operations and increase efficiency with intelligent automation solutions.", img: "/photos/automation.jpg" },
+  { slug: "cloud-web-applications", t: "Cloud-Based Web Applications", d: "Full-stack web solutions designed to scale with your business." },
+  { slug: "cross-platform-mobile-apps", t: "Cross-Platform Mobile Apps", d: "Beautiful, responsive mobile applications that work seamlessly across iOS and Android." },
+  { slug: "iot-solutions", t: "IoT Solutions", d: "Connect and automate your devices with cutting-edge Internet of Things technology." },
+  { slug: "ai-integration", t: "AI Integration", d: "Harness the power of artificial intelligence to transform your business processes." },
+  { slug: "website-development", t: "Website Development", d: "Professional, modern websites that represent your brand and engage your customers." },
+  { slug: "business-automation", t: "Business Automation", d: "Streamline your operations and increase efficiency with intelligent automation solutions." },
 ];
 
 export const products: Product[] = [

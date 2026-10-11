@@ -10,7 +10,7 @@ const stats = [
 export default function Numbers() {
   return (
     <section className="relative overflow-hidden border-y border-cream/10 py-20 md:py-28">
-      <Image src="/photos/city.jpg" alt="" fill sizes="100vw" className="object-cover opacity-20" />
+      <Image src="/photos/city.webp" alt="" fill sizes="100vw" className="object-cover opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/70 to-ink" />
       <div className="wrap relative">
         <div data-reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">

@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[min(100svh,860px)] flex-col justify-center overflow-hidden">
       {/* full-width background photo */}
-      <Image src="/photos/hero.jpg" alt="The CodingHub team at work" fill priority quality={80} sizes="100vw" className="object-cover object-[50%_18%]" />
+      <Image src="/photos/hero.webp" alt="The CodingHub team at work" fill priority quality={80} sizes="100vw" className="object-cover object-[50%_18%]" />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/0" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/50" />
 

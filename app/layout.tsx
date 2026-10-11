@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
-const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument" });
+const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["italic"], variable: "--font-instrument" });
 
 export const metadata: Metadata = {
   title: { default: "CodingHub | Innovative Technology Solutions", template: "%s | CodingHub" },
