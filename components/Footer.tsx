@@ -117,7 +117,6 @@ export default function Footer() {
       <div className="border-t border-cream/10">
         <div className="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-6 text-[13px] text-cream/70">
           <p>© 2026 CodingHub. All rights reserved.</p>
-          <p className="hidden sm:block">Photography via Unsplash</p>
           <a href="#main" className="inline-flex items-center gap-2 transition hover:text-lime">Back to top <span aria-hidden="true">↑</span></a>
         </div>
       </div>
