@@ -5,11 +5,14 @@ import { services } from "@/lib/data";
 
 export default function ServicesStack({ heading = true }: { heading?: boolean }) {
   return (
-    <section className="pb-20 md:pb-28">
+    <section className={heading ? "border-t border-cream/10 pb-20 pt-16 md:pb-28 md:pt-24" : "pb-20 md:pb-28"}>
       <div className="wrap">
         {heading && (
           <div data-reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
-            <h2 className="t-h1"><Words text="What we" /> <Words text="do" className="acc" /></h2>
+            <div>
+              <p className="t-eyebrow mb-6 flex items-center gap-3 text-mute"><span className="h-2 w-2 rounded-full bg-lime" />Our services</p>
+              <h2 className="t-h1"><Words text="What we" /> <Words text="do" className="acc" /></h2>
+            </div>
             <p className="max-w-xs text-sm leading-relaxed text-cream/75">Six integrated capabilities, delivered by one team: from the first idea to a scalable solution.</p>
           </div>
         )}

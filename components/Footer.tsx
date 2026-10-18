@@ -1,10 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Words } from "@/components/Words";
 import { products, services } from "@/lib/data";
 
 const menu = [["Home", "/"], ["Services", "/services"], ["Products", "/products"], ["Projects", "/projects"], ["About", "/about"], ["Contact", "/contact"]];
 const social = [
-  { n: "Facebook", h: "#", icon: <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8Z" /> },
+  { n: "Facebook", h: "https://www.facebook.com/CodingHubOfficial/", icon: <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8Z" /> },
+  { n: "WhatsApp", h: "https://wa.me/923058444160?text=Hello%20CodingHub%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services.", icon: <><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6Z" /><path d="M9 9c.2 2.4 2.6 4.8 6 6l1.4-1.4-2-1-1 .8c-.9-.4-1.6-1.1-2-2l.8-1-1-2Z" /></> },
+  { n: "Email", h: "mailto:codinghubpro@gmail.com", icon: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></> },
   { n: "LinkedIn", h: "#", icon: <><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2.5 2.5 0 0 1 5 0v3" /></> },
   { n: "X", h: "#", icon: <path d="m4 4 16 16M20 4 4 20" /> },
   { n: "Instagram", h: "#", icon: <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5v.01" /></> },
@@ -71,12 +74,14 @@ export default function Footer() {
       <div className="border-t border-cream/10">
         <div data-reveal className="wrap grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-20">
           <div className="sm:col-span-2 lg:col-span-4 lg:pr-10">
-            <Link href="/" className="font-display text-2xl font-medium tracking-[-0.04em]">CodingHub</Link>
+            <Link href="/" aria-label="CodingHub home" className="inline-block transition hover:opacity-80">
+              <Image src="/logo.webp" alt="CodingHub" width={548} height={185} className="h-14 w-auto" />
+            </Link>
             <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-cream/75">Empowering businesses through innovative technology solutions. We help businesses automate their processes and grow.</p>
             <ul className="mt-7 flex gap-3">
-              {social.map(({ n, h, icon }) => (
+              {social.filter((s) => s.h !== "#").map(({ n, h, icon }) => (
                 <li key={n}>
-                  <a href={h} aria-label={n} className="grid h-10 w-10 place-items-center rounded-full border border-cream/15 text-cream/80 transition hover:border-lime hover:bg-lime hover:text-ink">
+                  <a href={h} {...(h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} aria-label={h.startsWith("http") ? `${n} (opens in a new tab)` : n} className="grid h-10 w-10 place-items-center rounded-full border border-cream/15 text-cream/80 transition hover:border-lime hover:bg-lime hover:text-ink">
                     <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icon}</svg>
                   </a>
                 </li>

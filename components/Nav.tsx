@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -21,7 +22,9 @@ export default function Nav() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-4 z-[90] flex flex-col items-center px-4">
       <div className="pointer-events-auto flex w-full max-w-[44rem] items-center justify-between gap-1 rounded-full border border-cream/15 bg-ink/90 p-1.5 pl-5 shadow-lg shadow-black/30 backdrop-blur-xl md:w-auto md:max-w-none">
-        <Link href="/" className="mr-3 font-display text-[17px] font-medium tracking-[-0.04em] transition hover:[-webkit-text-stroke:0.5px_currentColor]">CodingHub</Link>
+        <Link href="/" aria-label="CodingHub home" className="mr-3 flex items-center transition hover:opacity-80">
+          <Image src="/logo.webp" alt="CodingHub" width={548} height={185} priority className="h-8 w-auto" />
+        </Link>
 
         <nav className="hidden items-center md:flex">
           {links.map(({ l, h }) => (
